@@ -47,12 +47,13 @@ public class PacBear : BaseUnit
         
         if (otherCollider.GetComponent<Ghost>() != null)
         {
-            if (isSpecial)
+            Ghost ghost = otherCollider.GetComponent<Ghost>();
+            if (isSpecial && !ghost.isReturnToSpawn)
             {
-
-                Destroy(otherCollider.gameObject);
+                ghost.Death();
+                //Destroy(otherCollider.gameObject);
             }
-            else
+            else if(!ghost.isReturnToSpawn)
             {
                 SceneManager.LoadScene("SampleScene");
             }

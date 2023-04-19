@@ -83,6 +83,7 @@ public class GameManager : Singleton<GameManager>
             }
         }
         TotalPills = NumPillsLeft;
+        PathFinder.instance.SetGrid(grid); //add this line to your GameManager, because the PathFinder needs a grid for its searching
     }
 
     // Update is called once per frame

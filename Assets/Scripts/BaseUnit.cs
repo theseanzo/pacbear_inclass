@@ -18,7 +18,7 @@ public class BaseUnit : BaseObject
     private Vector2Int prevDirection;
 
     // Use this for initialization
-    void Start()
+    protected virtual void Start()
     {
         //We assign nextPosInGrid, because when moveTimer >=1, the posInGrid gets set to that
         nextPosInGrid = posInGrid;
